@@ -1,0 +1,538 @@
+@import '../../assets/bower_components/bi-app-sass/bi-app/bi-app-ltr';
+@import 'app';
+
+// Colors
+$black: #000000;
+$white: #ffffff;
+$lime: #babf10;
+$copy: #58595B;
+$lt-grey: #eeebe8;
+$md-grey: #808184;
+
+// Fonts
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,800';
+
+$body: 'Open Sans', Helvetica, Arial, sans-serif;
+$title: 'minion-pro', serif;
+
+body {
+	background: $lt-grey;
+	font-family: $body;
+	color: $copy;
+	
+	a {
+		transition: all 0.5s linear;
+		&:hover {
+			transition: all 0.5s linear;
+		}
+	}
+	h1 {
+		font-family: $body;
+		font-weight: 800;
+	}
+	h2, h3, h4, h5, h6 {
+		font-family: $body;
+		text-transform: uppercase;
+		font-weight: 400;
+	}
+	h2 {
+		font-size: 38px;
+		margin-bottom: 0;
+	}
+	h3 {
+		font-family: $title;
+		text-transform: none;
+		color: $lime;
+		font-size: 28px;
+		font-weight: 700;
+		margin-bottom: 0;
+	}
+	h4 {
+		margin-top: 0;
+		font-size: 21px;
+	}
+	p {
+		font-size: 19px;
+		line-height: normal;
+		margin-top: 0;
+	}
+	#page {
+		max-width: none;
+		margin: 0;
+	}
+	.btn {
+		text-decoration: none;
+		display: inline-block;
+	    padding: 2px 36px;
+		margin: 24px auto 14px auto;
+		background: $white;
+		color: $copy;
+		width: auto;
+		transition: all 0.5s linear;
+		letter-spacing: 1px;
+		border: 2px solid $lime;
+		text-transform: uppercase;
+		&:hover {
+		    background: $lime;
+		    color: $white;
+		    transition: all 0.5s linear;
+		}
+		&.light {
+			background: white;
+			transition: all 0.5s linear;
+			&:hover {
+				background: $copy;
+				color: $white;
+				transition: all 0.5s linear;
+			}
+		}
+		&.dark {
+			background: black;
+			color: $md-grey;
+			transition: all 0.5s linear;
+			&:hover {
+				background: white;
+				color: $lt-grey;
+				transition: all 0.5s linear;
+			}
+		}		
+	}
+	#masthead {
+		background: white;
+	 	position: fixed;
+	 	width: 100%;
+	 	z-index: 10000;
+	 	padding: 26px 0;
+	 	border-top: 7px solid $lime;
+	 	.masthead-container {
+		 	@include outer-container(90%);
+	 	}
+	 	.logo-anchor {
+		    text-indent: -100000px;
+			height: 48px;
+			background: url('../img/KO-logo-lime.png') no-repeat;
+			background-size: contain;
+			@media all and (min-width: 800px) {
+				@include span-columns(2);
+			}
+	 	}
+		#primary-nav {
+			text-align: center;
+			float: none;
+			 	@media all and (min-width: 800px) {
+				 	@include span-columns(10);
+				 	text-align: left;
+			 	}
+			.dashicons, .dashicons-before:before {
+				position: relative;
+				height: 32px;
+				font-size: 33px;
+			}
+			.dashicons-menu:before {
+				position: absolute;
+				left: -5px;
+			}
+		}
+	 	nav {
+		 	.menu-header-container {
+			 	@media all and (min-width: 800px) {
+			 		float: right;
+			 	}
+			 	.flexnav {
+				 	li {
+					 	a {
+						 	font-family: $body;
+						 	text-transform: uppercase;
+						 	letter-spacing: 1px;
+						 	font-weight: 400;
+						 	background: white;
+						 	&:hover {
+							 	color: $lime;
+						 	}
+					 	}
+					 	@media all and (min-width: 800px) {
+					 		width: auto;
+					 		background-color: white;
+					 		a {
+						 		color: $copy;
+						 		background: white;
+						 		border-bottom: 0;
+								padding: 8px 12px 0 12px;
+							    font-size: 19px;
+					 		}
+					 	}
+				 	}
+			 	}
+		 	}
+
+	 	}
+	}
+	#main {
+		padding: 0;
+	}
+	#slider {
+		
+	}
+	#intro {
+		@include outer-container;
+		text-align: center;
+		padding: 82px 0 26px 0;
+		.intro-container {
+			@include span-columns(10);
+			@include shift(1);
+			@include omega();
+			h2 {
+				font-family: $title;
+				font-size: 36px;
+				font-weight: 700;
+				text-transform: none;
+			}
+		}
+		&.project {
+			.intro-container {
+				@include span-columns(4);
+				@include shift(1);
+				text-align: left;
+				h2 {
+					font-family: $title;
+				}
+			}
+			.media-container {
+				@include span-columns(5);
+				@include shift(1);
+				@include omega();
+				a {
+					span {	
+						text-decoration: none;
+					    display: inline-block;
+					    padding: 14px 24px;
+					    margin: 37px auto 14px auto;
+					    background: $black;
+					    color: $md-grey;
+					    width: auto;
+					    font-family: $copy;
+						font-size: 16px;
+						font-weight: 900;
+						letter-spacing: 1px;
+						text-transform: uppercase;
+						transition: all 0.5s linear;
+				    }
+				    &:hover {
+					    span {
+						    background: rgba(68,29,49,.2);
+						    color: $black;
+						    transition: all 0.5s linear;
+					    }
+				    }
+				}
+			}
+		}
+	}
+	#buckets {
+		background: $copy;
+	    padding: 15px 0 30px 0;
+	    border-top: 7px solid $lime;
+	    color: $white;
+	    text-align: center;
+		.buckets {
+			@include outer-container;
+				h2 {
+					text-align: center;
+				}
+			.bucket-holder {
+				@include span-columns(10);
+				@include shift(1);
+				.bucket {
+					@include span-columns(4);
+					@include omega(4n);
+					text-align: center;
+				}
+			}
+		}
+	}
+	#lists {
+		background: $black;
+		padding: 35px 0 60px 0;
+		color: $lt-grey;
+		.lists-container {
+			@include outer-container;
+			text-align: center;
+			.lists-list {
+				@include span-columns(12);
+				h2 {
+					text-align: center;
+					margin-bottom: 30px;
+				}
+				ul {
+					width: 100%;
+					li {
+						float: left;
+						width: 18%;
+						margin-left: 7%;
+						list-style: none;
+						font-weight: 600;
+						line-height: 26px;
+						text-align: left;
+					}
+				}
+			}
+			a {
+				text-decoration: none;
+			    display: inline-block;
+			    padding: 0 24px;
+			    margin: 37px auto 14px auto;
+			    background: $md-grey;
+			    color: $black;
+			    width: auto;
+			    transition: all 0.5s linear;
+			    letter-spacing: 1px;
+			    h3 {
+				    font-family: $copy;
+					font-size: 16px;
+					margin: 16px 0;
+			    }
+			    &:hover {
+				    background: $lt-grey;
+				    color: $md-grey;
+				    transition: all 0.5s linear;
+			    }					
+			}
+		}
+	}
+	#work {
+		padding: 0 0 26px 0;
+		text-align: center;
+		.work-container {
+			@include outer-container;
+			h3 {
+				margin-top: 0;
+			}
+			.btn {
+				margin-top: 48px;
+			}
+			.work-grid {
+				@include outer-container(90%);
+				ul {
+					margin-top: 35px;
+					padding-left: 0;
+					li {
+						@include span-columns(4);
+						@include omega(3n);
+						list-style: none;
+						a {
+							position: relative;
+						    display: block;
+							text-align: left;
+							background: $white;
+							transition: all 0.2s linear;
+							img {
+								width: 100%;
+								height: 100%;
+							}
+							.work-copy {
+								padding: 30px;
+							    h3 {
+							        font-size: 24px;
+							        font-weight: 700;
+							    }
+						    }
+						    &:hover {
+							    text-decoration: none;
+							    background: $copy;
+							    color: $white;
+							    transition: all 0.2s linear;
+						    }
+						}
+					}
+				}
+			}
+		}
+	}
+	#more-projects {
+		background: $black;
+		padding: 20px 0 0 0;
+		float: left;
+		width: 100%;
+		h3 {
+			text-align: center;
+			color: $md-grey;
+			font-family: $title;
+			font-size: 36px;
+			margin-bottom: 40px;
+		}
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			li {
+				float: left;
+				a {
+					position: relative;
+					display: inline-block;
+					text-align: center;
+					img {
+						transition: all 0.5s linear;
+					}
+					span {
+						position: absolute;
+						bottom: 50%;
+						width: 100%;
+						left: 0;
+						margin-bottom: -48px;
+						span {
+						text-decoration: none;
+					    display: inline-block;
+					    padding: 14px 24px;
+					    margin: 37px auto 14px auto;
+					    background: $black;
+					    color: $md-grey;
+					    width: auto;
+					    font-family: $copy;
+						font-size: 16px;
+						font-weight: 900;
+						letter-spacing: 1px;
+						text-transform: uppercase;
+						transition: all 0.5s linear;	
+						position: relative;
+						bottom: auto;						
+						}
+					}
+				    &:hover {
+					    img {
+						    opacity: .5;
+						    transition: all 0.5s linear;
+					    }
+					    span {
+						    span {
+							    background: $lt-grey;
+							    color: $black;
+							    transition: all 0.5s linear;
+							}
+					    }
+				    }
+				}
+			}
+		}
+	}
+	#mega-footer {
+		background: $md-grey;
+		float: left;
+		width: 100%;
+		text-align: center;
+		color: white;
+		padding: 35px 0 60px 0;
+		text-align: left;
+		.footer-container {
+			@include outer-container(90%);	
+			.widget {
+				@include span-columns(2);
+				border-right: 1px solid $white;
+				h3 {
+					margin-top: 0;
+				}
+				&:first-child {
+					@include span-columns(2);
+					@include shift(1);
+				}
+				&:nth-child(2) {
+					text-align: center;
+					padding-top: 30px;
+				}
+				&:nth-child(3) {
+					@include span-columns(4);
+					.btn {
+						margin-top: 0;
+						padding: 2px 12px;
+					}
+				}
+				&:last-child {
+					border-right: 0;
+					@include span-columns(3);
+				}
+				ul {
+					padding-left: 0;
+					list-style: none;
+					li {
+						a {
+							color: $white;
+							text-transform: uppercase;
+							font-size: 19px;
+						}
+					}
+					&.social {
+						margin-bottom: 54px;
+						li {
+							float: left;
+							display: inline-block;
+							margin-right: 14px;
+							a {
+								color: $md-grey;
+								display: block;
+								width: 40px;
+								height: 40px;
+								border-radius: 100px;
+								background: $white;
+							    padding: 5px 0 0 11px;
+							    &:hover {
+								    opacity: .5;
+							    }
+							}
+						}
+					}
+				}
+				p {
+					text-transform: uppercase;
+					font-size: 19px;
+					clear: left;
+				}
+			}		
+			.footer-content {
+				@include span-columns(12);
+				h2 {
+					font-family: $title;
+				}
+				p, a {
+					font-size: 22px;
+					line-height: 32px;
+				}
+				a {
+					font-weight: 600;
+					color: white;
+					&:hover {
+						color: rgba(255,255,255,.2);
+						text-decoration: none;
+					}
+					&.linkedin {
+						display: inline-block;
+						padding: 16px 19px;
+						margin: 37px auto 14px auto;
+						background: white;
+						color: $lime;
+					    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+						font-size: 24px;
+						font-weight: 700;
+					    line-height: normal;
+					    transition: all 0.5s linear;
+					    &:hover {
+						    text-decoration: none;
+						    background: rgba(255,255,255,.2);
+						    color: white;
+						    transition: all 0.5s linear;
+					    }
+					}
+				}
+			}
+		}
+	}
+	footer {
+		width: 100%;
+		max-width: none;
+		margin: 0;
+		background: white;
+		float: left;
+		p {
+			text-align: center;
+			font-weight: 600;
+		}
+	}
+}
